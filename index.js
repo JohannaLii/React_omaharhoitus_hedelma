@@ -1,34 +1,53 @@
-// Ylatunniste
+// Kuva
+const Kuva = () => {
+  return (
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+      alt="Reactin logo"
+      style={{ width: "40px", display: "block", marginBottom: "10px" }}
+    />
+  );
+};
+
+// Navigointipalkki
+const Navigointipalkki = () => {
+  return (
+    <nav>
+      <ul style={{
+        listStyle: 'none',
+        display: 'flex',
+        gap: '20px',
+        margin: 0,
+        padding: '10px 0'
+      }}>
+        <li style={{ cursor: 'pointer' }}>Koti</li>
+        <li style={{ cursor: 'pointer' }}>Meistä</li>
+        <li style={{ cursor: 'pointer' }}>Ota yhteyttä</li>
+      </ul>
+    </nav>
+  );
+};
+
+// Ylätunniste (sisältää Kuva ja Navigointipalkki)
 const Ylatunniste = () => {
   return (
-    <header style={{ backgroundColor: 'darkblue', padding: '15px' }}>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-        alt="Reactin logo"
-        style={{ width: "40px", display: "block", marginBottom: "10px" }}
-      />
+    <header style={{ backgroundColor: 'darkblue', color: 'white', padding: '15px' }}>
+      <Kuva />
       <h1 style={{ margin: 0 }}>Tietoa Reactista</h1>
-      <nav>
-        <ul style={{
-          listStyle: 'none',
-          display: 'flex',
-          gap: '20px',
-          margin: 0,
-          padding: '10px 0'
-        }}>
-          <li style={{ cursor: 'pointer' }}>Koti</li>
-          <li style={{ cursor: 'pointer' }}>Meistä</li>
-          <li style={{ cursor: 'pointer' }}>Ota yhteyttä</li>
-        </ul>
-      </nav>
+      <Navigointipalkki />
     </header>
   );
 };
 
-// Paateksti tieoa Reactista
-const Paateksti = () => {
+// Otsikko
+const Otsikko = () => {
+  return <h2>Tietoa Reactista</h2>;
+};
+
+// Sisältö
+const Sisalto = () => {
   return (
-    <main style={{ backgroundColor: '#fafafa', padding: '20px' }}>
+    <section>
       <ul>
         <li>Julkaistiin ensimmäisen kerran 2013</li>
         <li>Alunperin Jordan Walken luomus</li>
@@ -36,6 +55,16 @@ const Paateksti = () => {
         <li>On Facebookin ylläpitämä</li>
         <li>Toimii moottorina tuhansille ohjelmille, myös mobiilisoftille</li>
       </ul>
+    </section>
+  );
+};
+
+// Paateksti (sisältää Otsikko ja Sisalto)
+const Paateksti = () => {
+  return (
+    <main style={{ backgroundColor: '#fafafa', padding: '20px' }}>
+      <Otsikko />
+      <Sisalto />
     </main>
   );
 };
@@ -65,9 +94,11 @@ const App = () => {
   );
 };
 
-// Rendeeminen
+// Renderöinti
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
+
+
 
 
 
