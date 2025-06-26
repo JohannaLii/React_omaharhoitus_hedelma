@@ -1,8 +1,14 @@
+// Otsikko-komponentti
+const Otsikko = () => {
+  return <h1 className="header">Tämä on kuvaileva tapa toimia.</h1>;
+};
+
 // Navigointipalkki-komponentti
 const Navigointi = () => {
   return (
     <nav>
-      <ul className="navigointi-lista">
+      <hi>Johannan oma sivu</hi>
+      <ul className="navigointi-lista" style={{ listStyleType: "disc", paddingLeft: "20px" }}>
         <li><a href="#koti">Koti</a></li>
         <li><a href="#meista">Meistä</a></li>
         <li><a href="#yhteydenotto">Ota yhteyttä</a></li>
@@ -29,6 +35,7 @@ const Alatunniste = () => {
 const App = () => {
   return (
     <div>
+      <Otsikko />
       <Navigointi />
       <Sisalto />
       <Alatunniste />
